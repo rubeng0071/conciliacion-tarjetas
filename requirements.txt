@@ -1,0 +1,16 @@
+# Procesamiento de datos
+pandas==2.1.4
+openpyxl==3.1.2
+
+# Manejo de variables de entorno
+python-dotenv==1.0.0
+
+# Logging y utilidades
+python-dateutil==2.8.2
+schedule==1.2.1
+
+# Seguridad
+cryptography==42.0.2
+
+# Herramientas de empaquetado
+pyinstaller==6.3.0 

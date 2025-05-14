@@ -1,0 +1,40 @@
+# Entorno virtual
+venv/
+
+# Archivos de configuración sensibles
+config/.env
+
+# Archivos de llaves privadas
+keys/*
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de logs
+*.log
+service.log
+
+# Archivos de datos (no subir datos reales)
+files/input/*
+files/terminado/*
+files/excel/*
+!files/input/.gitkeep
+!files/terminado/.gitkeep
+!files/excel/.gitkeep
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Otros
+*.bak
+*.tmp
+*.swp
+
+# Docker
+.docker/
+
+# VSCode
+.vscode/

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  fiserv_conciliacion:
+    build: .
+    container_name: fiserv_conciliacion
+    volumes:
+      - ./files:/app/files
+      - ./config:/app/config
+    restart: always
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
+      - FRECUENCIA_ENVIO=semanal
+      - DIA_INICIO_SEMANA=0
+      - SEMANA_ANTERIOR=true
+      - PYTHONUNBUFFERED=1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

@@ -1,0 +1,7 @@
+yes
+f8&
+cd available
+ls CL586D*
+lcd C:\UserData\Rapanui\Python\Concilacion_Tarjetas\files\input
+get CL586D*
+bye

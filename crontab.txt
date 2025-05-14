@@ -1,0 +1,9 @@
+# Ejecutar cada día a las 8:00 AM
+0 8 * * * cd /app && python main.py >> /var/log/cron.log 2>&1
+
+# Mantener el archivo de log limpio
+0 0 * * * find /var/log/cron.log -type f -size +10M -exec truncate -s 0 {} \;
+
+# Necesario para que cron corra correctamente:
+
+
