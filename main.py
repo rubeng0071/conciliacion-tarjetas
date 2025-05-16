@@ -100,15 +100,25 @@ def verify_license():
         return False
 
 def extract_date_from_filename(filename):
-    # Extrae la fecha del formato TRONA001.20250403...
+    # Extrae la fecha del formato .UUUUUUU.CL586D.I%MMDDXXX.TXT
     try:
         parts = filename.split('.')
-        if len(parts) < 2:
+        if len(parts) < 4:
             return None
-        date_str = parts[1][:8]
-        if len(date_str) != 8:
+        
+        # Obtener la parte que contiene la fecha (MMDDXXX)
+        date_part = parts[3].replace('I', '')  # Remover la 'I' del inicio
+        if len(date_part) < 6:
             return None
-        date_obj = datetime.strptime(date_str, '%Y%m%d')
+            
+        # Extraer mes y día
+        month = int(date_part[:2])
+        day = int(date_part[2:4])
+        
+        # Usar el año actual
+        year = datetime.now().year
+        
+        date_obj = datetime(year, month, day)
         return date_obj
     except (IndexError, ValueError) as e:
         print(f"Error al procesar fecha: {e}")
