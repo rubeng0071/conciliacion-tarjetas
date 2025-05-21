@@ -106,6 +106,10 @@ def extract_date_from_filename(filename):
         if len(parts) < 4:
             return None
         
+        # Obtener el año de la parte después del primer punto
+        year_part = parts[1][:4]  # Tomar los primeros 4 dígitos después del punto
+        year = int(year_part)
+        
         # Obtener la parte que contiene la fecha (MMDDXXX)
         date_part = parts[3].replace('I', '')  # Remover la 'I' del inicio
         if len(date_part) < 6:
@@ -114,9 +118,6 @@ def extract_date_from_filename(filename):
         # Extraer mes y día
         month = int(date_part[:2])
         day = int(date_part[2:4])
-        
-        # Usar el año actual
-        year = datetime.now().year
         
         date_obj = datetime(year, month, day)
         return date_obj

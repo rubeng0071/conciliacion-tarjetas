@@ -36,6 +36,7 @@ Thumbs.db
 # Docker
 .docker/
 .venv/
+ 
 
 # VSCode
 .vscode/
